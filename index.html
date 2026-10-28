@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Lumen</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Lumen: a minimal, Apple TV–style IPTV player for Google TV.">
+<meta name="description" content="Lumen: a beautifully simple IPTV player for Android TV, Google TV and Fire TV.">
 <style>
   :root { --bg:#0a0a0c; --surface:#1c1c1e; --text:#f5f5f7; --muted:#a1a1a6; --accent:#0a84ff; }
   * { box-sizing:border-box; }
@@ -15,6 +15,7 @@
   h2 { font-size:24px; margin:48px 0 12px; }
   ol { padding-left:24px; }
   li { margin:8px 0; }
+  ul { padding-left:20px; margin:8px 0; color:var(--muted); }
   code { background:var(--surface); padding:2px 8px; border-radius:6px; font-size:0.95em; }
   .link { display:inline-block; margin-top:8px; background:var(--surface); border-radius:12px; padding:16px 24px;
           font-size:28px; font-weight:600; color:var(--accent); }
@@ -25,19 +26,31 @@
 <body>
 <main>
   <h1>Lumen</h1>
-  <p class="lead">A minimal, Apple TV–style IPTV player for Google TV.</p>
+  <p class="lead">A beautifully simple IPTV player for your TV.</p>
 
-  <p>Live TV with a channel guide, favourites on the home screen, and films and series from your provider.
-    Lumen is only a player: it comes with no channels or playlists. You add your own M3U link or Xtream login.</p>
+  <p>Lumen is designed to feel like it came with your TV: calm, fast and polished, with nothing in the way of what
+    you're watching. Live TV with a full channel guide, your favourite channels front and centre, and films and series
+    with Continue watching, all in one clean place.</p>
 
-  <h2>Install on Google TV</h2>
+  <p>Lumen is only a player. It comes with no channels or playlists: you add your own M3U link or Xtream login.</p>
+
+  <h2>Works on</h2>
+  <p>Android TV and Google TV smart TVs, Chromecast with Google TV, Nvidia Shield, Android TV boxes, and
+    Amazon Fire TV sticks running Fire OS 8 (such as the Fire TV Stick 4K and 4K Max). Needs Android 10 or newer.</p>
+
+  <h2>Install</h2>
   <ol>
-    <li>Install <strong>Downloader</strong> (by AFTVnews) from the Play Store on your TV.</li>
-    <li>Allow it to install apps: <em>Settings → Apps → Security &amp; restrictions → Unknown sources → Downloader</em>.</li>
+    <li>Install the free <strong>Downloader</strong> app (by AFTVnews) from your TV's app store.</li>
+    <li>Allow Downloader to install apps. Most TVs ask the first time. If yours doesn't:
+      <ul>
+        <li><strong>Android TV / Google TV:</strong> <em>Settings → Apps → Security &amp; restrictions → Unknown sources → Downloader</em></li>
+        <li><strong>Fire TV:</strong> <em>Settings → My Fire TV → Developer options → Install unknown apps → Downloader</em></li>
+      </ul>
+    </li>
     <li>Open Downloader and enter:<br><span class="link">lumen-tv.github.io/get</span></li>
-    <li>Choose <strong>Install</strong>.</li>
+    <li>Choose <strong>Install</strong>, then open Lumen from your apps.</li>
   </ol>
-  <p>Lumen updates itself: when a new version is out, its Home screen offers it.</p>
+  <p>Lumen keeps itself up to date: when a new version is out, it lets you know on its Home screen.</p>
 
   <p class="note"><a href="https://github.com/lumen-tv/Lumen-TV/blob/main/PRIVACY.md">Privacy</a> (Lumen collects nothing) ·
     <a href="https://github.com/lumen-tv/Lumen-TV/releases">All versions</a> ·
