@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tv generator-info-name="Lumen demo">
 <channel id="demo1"><display-name>Open Movie Channel</display-name></channel>
-<channel id="demo2"><display-name>Sci-Fi Nights</display-name></channel>
+<channel id="demo2"><display-name>Science Fiction</display-name></channel>
 <channel id="demo3"><display-name>Mystery Movies</display-name></channel>
 <channel id="demo4"><display-name>Screwball</display-name></channel>
 <channel id="demo5"><display-name>Silent Cinema</display-name></channel>
