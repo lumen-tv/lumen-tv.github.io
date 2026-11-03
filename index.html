@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Lumen: a beautifully simple IPTV player for your TV</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Lumen is a beautifully simple IPTV player for Android TV and Fire TV: live TV with a full guide, your favourite channels up front, and films and series with Continue watching.">
+<meta name="description" content="Lumen is a beautifully simple IPTV player for Android TV, Fire TV, iPhone and iPad: live TV with a full guide, your favourite channels up front, and films and series with Continue watching.">
 <meta name="theme-color" content="#0d0f14">
 <meta property="og:title" content="Lumen">
 <meta property="og:description" content="A beautifully simple IPTV player for your TV.">
@@ -160,6 +160,34 @@
   @media (max-width:1000px) { .install ol { grid-template-columns:repeat(2, 1fr); } }
   @media (max-width:600px) { .install { padding:44px 20px; border-radius:24px; } .install ol { grid-template-columns:1fr; } }
 
+  /* iPhone and iPad */
+  .mobile { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center; }
+  .soon { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:999px; font-size:14px; font-weight:600;
+          color:#9fc9ff; background:rgba(10,132,255,.14); border:1px solid rgba(10,132,255,.32); }
+  .soon::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); }
+  .mobile h2 { margin-top:20px; }
+  .mobile .sub { margin:0; }
+  .mobile ol { list-style:none; padding:0; margin:32px 0 0; display:grid; grid-template-columns:1fr; gap:12px; counter-reset:s; }
+  .mobile li { counter-increment:s; display:flex; gap:16px; align-items:flex-start; border-radius:18px; padding:18px 20px;
+               background:rgba(13,15,20,.45); border:1px solid var(--edge); font-size:16px; color:var(--muted); }
+  .mobile li::before { content:counter(s); flex:none; display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:#fff; color:#0d0f14; font-weight:600; font-size:15px; margin:0; }
+  .mobile li strong { color:var(--text); font-weight:600; }
+  .mobile .ctas { justify-content:flex-start; margin-top:28px; }
+  .pill.off { cursor:default; opacity:.55; }
+  .pill.off:hover { transform:none; box-shadow:none; background:var(--glass); }
+  .devices { position:relative; padding:0 0 48px 0; }
+  .devices::before { content:""; position:absolute; inset:-6% -4%; z-index:-1; border-radius:50%;
+                     background:radial-gradient(closest-side, rgba(10,132,255,.26), rgba(255,159,10,.10) 65%, transparent); filter:blur(30px); }
+  .ipad { border-radius:26px; padding:10px; background:#05060a; border:1px solid rgba(255,255,255,.10); margin-right:14%;
+          box-shadow:0 40px 120px -20px rgba(0,0,0,.85); }
+  .ipad img { border-radius:17px; aspect-ratio:1180/820; width:100%; }
+  .iphone { position:absolute; right:0; bottom:0; width:27%; border-radius:30px; padding:6px; background:#05060a;
+            border:1px solid rgba(255,255,255,.14); box-shadow:0 30px 80px -10px rgba(0,0,0,.9); }
+  .iphone img { border-radius:25px; aspect-ratio:393/852; width:100%; }
+  @media (max-width:900px) { .mobile { grid-template-columns:1fr; gap:48px; } .mobile .kick { text-align:center; } .mobile .sub { margin:0 auto; }
+                             .mobile ol { text-align:left; } .mobile .ctas { justify-content:center; } }
+  @media (max-width:600px) { .iphone { border-radius:20px; padding:4px; } .iphone img { border-radius:16px; } .ipad { border-radius:16px; padding:6px; } .ipad img { border-radius:11px; } }
+
   /* FAQ */
   .faq { max-width:780px; margin:48px auto 0; display:grid; gap:12px; }
   details { border-radius:20px; padding:0 24px; }
@@ -205,6 +233,7 @@
     <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>Lumen</a>
     <nav class="nav-links">
       <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#iphone">iPhone &amp; iPad</a>
       <a class="hide-sm" href="#faq">FAQ</a>
       <a class="pill" href="#install"><svg><use href="#i-down"/></svg>Get Lumen</a>
     </nav>
@@ -217,7 +246,7 @@
       <span class="ico"><svg><use href="#i-tv"/></svg></span>
       <div>
         <strong>Lumen is ready for your TV</strong>
-        <span>Install it on any Android TV or Fire TV with the free Downloader app: enter code <code>5956610</code> or <code>lumen-tv.github.io/get</code></span>
+        <span>Install it on any Android TV or Fire TV with the free Downloader app: enter code <code>5956610</code> or <code>lumen-tv.github.io/get</code>. <a href="#iphone">iPhone and iPad are coming soon.</a></span>
       </div>
     </div>
   </div>
@@ -322,6 +351,30 @@
     </div>
   </section>
 
+  <section id="iphone" style="padding-top:24px">
+    <div class="wrap">
+      <div class="install mobile">
+        <div class="kick">
+          <span class="soon">Coming soon to the App Store</span>
+          <h2>Lumen on iPhone and iPad</h2>
+          <p class="sub">The same calm, colourful Lumen, made for touch. Watch live TV and the guide, carry on with films and series, and keep watching in picture in picture. Works on iPhone and iPad with iOS 18 or newer.</p>
+          <ol>
+            <li><span>Open the <strong>App Store</strong> on your iPhone or iPad and search for <strong>Lumen</strong>, or tap the button below once it's live.</span></li>
+            <li><span>Tap <strong>Get</strong>. Lumen is free, with no ads and no account.</span></li>
+            <li><span>Open Lumen and <strong>add your playlist link or Xtream login</strong>, just like on your TV.</span></li>
+          </ol>
+          <div class="ctas">
+            <span class="pill ghost off" aria-disabled="true">App Store link coming soon</span>
+          </div>
+        </div>
+        <div class="devices">
+          <div class="ipad"><img src="img/ipad.jpg" alt="Lumen on iPad: favourite channels as colourful cards under a top bar"></div>
+          <div class="iphone"><img src="img/iphone.jpg" alt="Lumen on iPhone: what's on now and your favourite channels"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap kicker">
       <h2>Questions</h2>
@@ -329,16 +382,16 @@
       <div class="faq" style="text-align:left">
         <details class="glass"><summary>Does Lumen come with channels?</summary>
           <p>No. Lumen is only a player: it comes with no channels, playlists or films. You add your own M3U playlist link or Xtream login from a TV service you already use.</p></details>
-        <details class="glass"><summary>Which TVs does it work on?</summary>
-          <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer. Lumen needs Android 10 or newer.</p></details>
+        <details class="glass"><summary>Which devices does it work on?</summary>
+          <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer (Android 10 or newer). iPhone and iPad with iOS 18 or newer are coming soon on the App Store.</p></details>
         <details class="glass"><summary>Is it really free?</summary>
           <p>Yes. No subscription, no ads, no account to make.</p></details>
         <details class="glass"><summary>How do updates work?</summary>
-          <p>When a new version is out, Lumen tells you on its Home screen. Choose Update, confirm, and the new version is ready in moments.</p></details>
+          <p>On your TV, Lumen tells you on its Home screen when a new version is out. Choose Update, confirm, and the new version is ready in moments. On iPhone and iPad, updates come through the App Store.</p></details>
         <details class="glass"><summary>Is there a TV guide?</summary>
           <p>Yes. Lumen loads your service's guide automatically, or you can add a separate guide link in Settings. It refreshes itself in the background.</p></details>
         <details class="glass"><summary>What does Lumen know about me?</summary>
-          <p>Nothing. Your playlists, logins and favourites stay on your TV. Lumen has no accounts, no analytics and no tracking. Read the <a href="privacy/">privacy policy</a>.</p></details>
+          <p>Nothing. Your playlists, logins and favourites stay on your devices. Lumen has no accounts, no analytics and no tracking. Read the <a href="privacy/">privacy policy</a>.</p></details>
       </div>
     </div>
   </section>
