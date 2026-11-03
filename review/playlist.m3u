@@ -1,0 +1,11 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="lumen.bigbuckbunny" group-title="Open films",Big Buck Bunny
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+#EXTINF:-1 tvg-id="lumen.tearsofsteel" group-title="Open films",Tears of Steel
+https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+#EXTINF:-1 tvg-id="lumen.livetest" group-title="Test streams",Live Test Stream
+https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8
+#EXTINF:-1 tvg-id="lumen.bipbop" group-title="Test streams",Bip Bop HD
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 tvg-id="lumen.bipbop169" group-title="Test streams",Bip Bop 16x9
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8

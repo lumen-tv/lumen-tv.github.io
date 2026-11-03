@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lumen privacy policy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0f14">
+<style>
+  @font-face { font-family:Inter; font-weight:400; font-display:swap; src:url(../fonts/inter_regular.woff2) format("woff2"); }
+  @font-face { font-family:Inter; font-weight:600; font-display:swap; src:url(../fonts/inter_semibold.woff2) format("woff2"); }
+  :root { --bg:#0d0f14; --text:#f5f5f7; --muted:#a1a1a6; --edge:rgba(255,255,255,.10); --accent:#0a84ff; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--text); background:var(--bg); font:17px/1.65 Inter, system-ui, -apple-system, sans-serif;
+         -webkit-font-smoothing:antialiased; padding:48px max(16px, env(safe-area-inset-right)) 72px max(16px, env(safe-area-inset-left)); }
+  body::before { content:""; position:fixed; inset:0; z-index:-1;
+    background:radial-gradient(60vw 60vw at 12% -10%, rgba(38,64,110,.6), transparent 70%), radial-gradient(55vw 55vw at 92% 110%, rgba(92,59,31,.45), transparent 70%), var(--bg); }
+  main { max-width:68ch; margin:0 auto; }
+  a { color:var(--accent); }
+  .home { color:var(--muted); text-decoration:none; font-weight:600; }
+  h1 { font-size:36px; line-height:1.15; letter-spacing:-.02em; margin:28px 0 6px; text-wrap:balance; }
+  h2 { font-size:21px; margin:36px 0 8px; }
+  .meta { color:var(--muted); margin:0 0 24px; }
+  li { margin:6px 0; }
+  code { font-size:15px; background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; word-break:break-all; }
+</style>
+</head>
+<body>
+<main>
+<a class="home" href="../">← Lumen</a>
+<h1>Privacy policy</h1>
+<p class="meta">Last updated 3 November 2026. Covers Lumen for Google TV, iPhone and iPad.</p>
+<p>Lumen is a video player. It does not collect, share or sell any personal data. It has no accounts, analytics, ads or tracking, and no servers of its own.</p>
+
+<h2>What stays on your device</h2>
+<ul>
+  <li>Playlist links, logins, favourites, watch progress, My List and settings are stored only on your device.</li>
+  <li><strong>TV:</strong> nothing is backed up to the cloud (Android backup is turned off for Lumen).</li>
+  <li><strong>iPhone and iPad:</strong> logins are kept in the iOS Keychain. If iCloud is on for your Apple Account, your playlists, favourites, progress, My List and category settings sync between your own devices through your iCloud account (logins through iCloud Keychain). Apple stores this for you; it never reaches us.</li>
+</ul>
+
+<h2>Who Lumen talks to</h2>
+<ul>
+  <li>The playlist, guide and stream addresses <strong>you</strong> enter, to load channels, programme guides, films and series. Those providers see your device's IP address, as with any streaming app, and their own privacy policies apply.</li>
+  <li>Channel logo and poster addresses supplied by those playlists.</li>
+  <li>Intro databases (<a href="https://theintrodb.org">TheIntroDB</a>, <a href="https://introdb.app">IntroDB</a> and <a href="https://skipdb.tv">SkipDB</a>), when you play a series episode: the show's TMDB or IMDb id and the season and episode number (or the show's name, to find its id), so the Skip intro button knows where the intro is. Nothing that identifies you.</li>
+  <li>OMDb (<code>omdbapi.com</code>), only if you enter your own OMDb key: the title and year of films and series you open, for their ratings.</li>
+  <li><strong>TV only:</strong> GitHub (<code>api.github.com</code>, <code>github.com</code>), to check for and download Lumen updates. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
+</ul>
+
+<h2>Removing your data</h2>
+<p>Delete a playlist in Lumen, or delete the app, and everything it stored on that device is removed. On iPhone and iPad, synced copies are removed from iCloud when you delete them in the app on any of your devices.</p>
+
+<h2>Content</h2>
+<p>Lumen provides no channels, films or series of its own. You add your own playlist from your own provider.</p>
+
+<h2>Questions</h2>
+<p>Ask on the <a href="../support/">support page</a>.</p>
+</main>
+</body>
+</html>

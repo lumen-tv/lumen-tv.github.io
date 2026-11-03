@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lumen support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d0f14">
+<style>
+  @font-face { font-family:Inter; font-weight:400; font-display:swap; src:url(../fonts/inter_regular.woff2) format("woff2"); }
+  @font-face { font-family:Inter; font-weight:600; font-display:swap; src:url(../fonts/inter_semibold.woff2) format("woff2"); }
+  :root { --bg:#0d0f14; --text:#f5f5f7; --muted:#a1a1a6; --edge:rgba(255,255,255,.10); --accent:#0a84ff; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { margin:0; color:var(--text); background:var(--bg); font:17px/1.65 Inter, system-ui, -apple-system, sans-serif;
+         -webkit-font-smoothing:antialiased; padding:48px max(16px, env(safe-area-inset-right)) 72px max(16px, env(safe-area-inset-left)); }
+  body::before { content:""; position:fixed; inset:0; z-index:-1;
+    background:radial-gradient(60vw 60vw at 12% -10%, rgba(38,64,110,.6), transparent 70%), radial-gradient(55vw 55vw at 92% 110%, rgba(92,59,31,.45), transparent 70%), var(--bg); }
+  main { max-width:68ch; margin:0 auto; }
+  a { color:var(--accent); }
+  .home { color:var(--muted); text-decoration:none; font-weight:600; }
+  h1 { font-size:36px; line-height:1.15; letter-spacing:-.02em; margin:28px 0 6px; text-wrap:balance; }
+  h2 { font-size:21px; margin:36px 0 8px; }
+  .meta { color:var(--muted); margin:0 0 24px; }
+  li { margin:6px 0; }
+  code { font-size:15px; background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; word-break:break-all; }
+</style>
+</head>
+<body>
+<main>
+<a class="home" href="../">← Lumen</a>
+<h1>Support</h1>
+<p class="meta">Help for Lumen on Google TV, iPhone and iPad.</p>
+
+<h2>Getting started</h2>
+<p>Lumen plays the TV subscription you already have. Open Lumen, choose <strong>Add playlist</strong>, and enter the Xtream login (server, username, password) or the M3U link your provider gave you. Your channels, guide, films and series then load.</p>
+
+<h2>Try it without a subscription</h2>
+<p>Add this playlist of free, openly licensed test streams:</p>
+<p><code>https://lumen-tv.github.io/review/playlist.m3u</code></p>
+
+<h2>Common questions</h2>
+<ul>
+  <li><strong>Does Lumen come with channels?</strong> No. Lumen is only a player; it has no content of its own.</li>
+  <li><strong>A film won't play.</strong> Close it and open it again. Some providers allow only one connection at a time, so stop playback on your other devices first.</li>
+  <li><strong>No TV guide?</strong> The guide comes from your provider. In Settings, open your playlist and check its guide link.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Report a problem or ask a question by <a href="https://github.com/lumen-tv/Lumen-TV/issues">opening an issue on GitHub</a>. Please never post your playlist link or login.</p>
+</main>
+</body>
+</html>
