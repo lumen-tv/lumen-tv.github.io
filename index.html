@@ -9,6 +9,8 @@
 <meta property="og:title" content="Lumen">
 <meta property="og:description" content="A beautifully simple IPTV player for your TV.">
 <meta property="og:image" content="https://lumen-tv.github.io/img/home.jpg">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/inter_semibold.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   /* Inter, self-hosted (no font requests to anyone else). OFL, see fonts/LICENSE.txt. */
@@ -54,12 +56,15 @@
   header.scrolled { border-bottom-color:var(--edge); }
   .bar { display:flex; align-items:center; justify-content:space-between; height:68px; }
   .brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:22px; text-decoration:none; letter-spacing:-.01em; }
-  .mark {
-    width:32px; height:32px; border-radius:9px; display:grid; place-items:center;
-    background:linear-gradient(140deg, #3a6fd8, #0a84ff 45%, #b36a2e);
-    box-shadow:0 4px 14px rgba(10,132,255,.35);
-  }
-  .mark::after { content:""; width:11px; height:11px; border-radius:50%; background:#fff; }
+  /* The app icon (same as the App Store icon). */
+  .mark { width:34px; height:34px; border-radius:9px; display:block; box-shadow:0 4px 14px rgba(10,132,255,.30), 0 0 0 1px rgba(255,255,255,.10); }
+  .app-icon { width:112px; height:112px; border-radius:26px; margin:0 auto 28px; display:block;
+              box-shadow:0 20px 60px -10px rgba(10,132,255,.45), 0 0 0 1px rgba(255,255,255,.10); }
+  .mobile .app-icon { width:72px; height:72px; border-radius:17px; margin:0 0 20px; }
+  @media (max-width:900px) { .mobile .app-icon { margin:0 auto 20px; } }
+  .platforms { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:22px; }
+  .platforms span, .platforms a { text-decoration:none; padding:6px 14px; border-radius:999px; font-size:14px; font-weight:500; color:var(--muted); background:var(--glass); border:1px solid var(--edge); }
+  .platforms .next { color:#9fc9ff; border-color:rgba(10,132,255,.32); background:rgba(10,132,255,.10); }
   .nav-links { display:flex; align-items:center; gap:28px; font-size:15px; color:var(--muted); }
   .nav-links a { text-decoration:none; }
   .nav-links a:hover { color:var(--text); }
@@ -173,6 +178,10 @@
   .mobile li::before { content:counter(s); flex:none; display:grid; place-items:center; width:30px; height:30px; border-radius:50%; background:#fff; color:#0d0f14; font-weight:600; font-size:15px; margin:0; }
   .mobile li strong { color:var(--text); font-weight:600; }
   .mobile .ctas { justify-content:flex-start; margin-top:28px; }
+  .sync { display:flex; gap:14px; align-items:flex-start; margin:24px 0 0; padding:18px 20px; border-radius:18px; text-align:left;
+          background:rgba(90,200,250,.08); border:1px solid rgba(90,200,250,.22); color:var(--muted); font-size:16px; }
+  .sync svg { flex:none; width:26px; height:26px; color:var(--blue); margin-top:1px; }
+  .sync strong { color:var(--text); font-weight:600; }
   .pill.off { cursor:default; opacity:.55; }
   .pill.off:hover { transform:none; box-shadow:none; background:var(--glass); }
   .devices { position:relative; padding:0 0 48px 0; }
@@ -224,13 +233,14 @@
     <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4"/></symbol>
     <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-sub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M6 12.5h4M12 12.5h6M6 15.5h8M16 15.5h2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10.5a4 4 0 0 0 .6-8 6 6 0 0 0-11.6 1.500A3.300 3.300 0 0 0 7 18.500z"/><path d="M9.500 14.200l2 2 3.500-3.700"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6.5 10.5L12 16l5.5-5.5M5 20h14"/></symbol>
   </defs>
 </svg>
 
 <header id="top">
   <div class="wrap bar">
-    <a class="brand" href="#"><span class="mark" aria-hidden="true"></span>Lumen</a>
+    <a class="brand" href="#"><img class="mark" src="img/icon-64.png" alt="" aria-hidden="true">Lumen</a>
     <nav class="nav-links">
       <a class="hide-sm" href="#features">Features</a>
       <a class="hide-sm" href="#iphone">iPhone &amp; iPad</a>
@@ -305,6 +315,14 @@
       </div>
     </div>
     <div class="row">
+      <div class="shot"><div class="tv"><div class="screen"><span class="ph">Movies</span><img src="img/movies.jpg" alt="The Movies tab: a featured film with Play and My List, over a Continue watching row" onerror="this.remove()"></div></div></div>
+      <div>
+        <div class="tile t-pink"><svg><use href="#i-resume"/></svg></div>
+        <h2>Your next film is already waiting</h2>
+        <p>The Movies tab opens on a featured film, with everything you started in Continue watching and your provider's categories below. Add anything to My List with a single press.</p>
+      </div>
+    </div>
+    <div class="row flip">
       <div class="shot"><div class="tv green"><div class="screen"><span class="ph">Guide in the player</span><img src="img/player.jpg" alt="A channel playing full screen with its upcoming programmes beside it" onerror="this.remove()"></div></div></div>
       <div>
         <div class="tile t-green"><svg><use href="#i-play"/></svg></div>
@@ -336,6 +354,7 @@
     <div class="wrap">
       <div class="install">
         <div class="kicker">
+          <img class="app-icon" src="img/icon-256.jpg" alt="The Lumen app icon">
           <h2>Get Lumen on your TV</h2>
           <p class="sub">It takes about a minute. Works on Android TV, Google TV and Fire TV running Android 10 or newer.</p>
         </div>
@@ -345,6 +364,9 @@
           <li>Open Downloader and enter the code:<br><span class="code" style="font-size:24px;letter-spacing:.08em">5956610</span><br><span style="font-size:14px">or the address lumen-tv.github.io/get</span></li>
           <li>Choose <strong>Install</strong>, then open Lumen from your apps. That's it.</li>
         </ol>
+        <div class="platforms" aria-label="Where Lumen runs">
+          <span>Android TV</span><span>Google TV</span><span>Fire TV</span><a class="next" href="#iphone">iPhone &amp; iPad: coming soon</a>
+        </div>
         <p class="hint">Tip: on Android TV and Google TV it's <em>Settings → Apps → Security &amp; restrictions → Unknown sources</em>.
           On Fire TV it's <em>Settings → My Fire TV → Developer options → Install unknown apps</em>.</p>
       </div>
@@ -355,9 +377,11 @@
     <div class="wrap">
       <div class="install mobile">
         <div class="kick">
+          <img class="app-icon" src="img/icon-256.jpg" alt="The Lumen app icon">
           <span class="soon">Coming soon to the App Store</span>
           <h2>Lumen on iPhone and iPad</h2>
           <p class="sub">The same calm, colourful Lumen, made for touch. Watch live TV and the guide, carry on with films and series, and keep watching in picture in picture. Works on iPhone and iPad with iOS 18 or newer.</p>
+          <p class="sync"><svg><use href="#i-cloud"/></svg><span><strong>Synced with iCloud.</strong> Add a playlist on your iPhone and it's on your iPad too, along with your favourites, My List, where you stopped watching and the categories you've hidden or renamed. Your logins travel safely in your iCloud Keychain.</span></p>
           <ol>
             <li><span>Open the <strong>App Store</strong> on your iPhone or iPad and search for <strong>Lumen</strong>, or tap the button below once it's live.</span></li>
             <li><span>Tap <strong>Get</strong>. Lumen is free, with no ads and no account.</span></li>
@@ -384,6 +408,8 @@
           <p>No. Lumen is only a player: it comes with no channels, playlists or films. You add your own M3U playlist link or Xtream login from a TV service you already use.</p></details>
         <details class="glass"><summary>Which devices does it work on?</summary>
           <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer (Android 10 or newer). iPhone and iPad with iOS 18 or newer are coming soon on the App Store.</p></details>
+        <details class="glass"><summary>Do my iPhone and iPad stay in sync?</summary>
+          <p>Yes. With iCloud turned on, your playlists, favourites, My List, where you stopped watching and your hidden or renamed categories are the same on every iPhone and iPad signed in to your account. Logins are kept in your iCloud Keychain. Without iCloud, Lumen simply keeps everything on the device.</p></details>
         <details class="glass"><summary>Is it really free?</summary>
           <p>Yes. No subscription, no ads, no account to make.</p></details>
         <details class="glass"><summary>How do updates work?</summary>
@@ -399,7 +425,7 @@
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#" style="font-size:18px"><span class="mark" aria-hidden="true" style="width:26px;height:26px;border-radius:8px"></span>Lumen</a>
+    <a class="brand" href="#" style="font-size:18px"><img class="mark" src="img/icon-64.png" alt="" aria-hidden="true" style="width:28px;height:28px;border-radius:8px">Lumen</a>
     <nav>
       <a href="privacy/">Privacy</a>
       <a href="support/">Support</a>
