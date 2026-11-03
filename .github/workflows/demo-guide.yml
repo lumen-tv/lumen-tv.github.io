@@ -1,0 +1,21 @@
+# Keeps the demo library's TV guide (demo/xmltv.xml) running: it covers three weeks from the day
+# it's built, so this rebuilds it every Monday and commits the new file to main.
+name: Refresh demo guide
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  guide:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/build_demo.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demo
+          git diff --cached --quiet || git commit -m "Refresh the demo TV guide"
+          git push
