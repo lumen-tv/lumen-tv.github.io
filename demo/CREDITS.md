@@ -38,7 +38,7 @@ Everything here is free to show and play. Videos are linked, not copied.
 Live channels loop the films above, public-domain NASA footage and public HLS test streams:
 
 - Open Movie Channel: https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
-- Sci-Fi Nights: https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
+- Science Fiction: https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8
 - Mystery Movies: https://archive.org/download/Detour/Detour.mp4
 - Screwball: https://archive.org/download/his_girl_friday/his_girl_friday.mp4
 - Silent Cinema: https://archive.org/download/The_General_Buster_Keaton/The_General.mp4

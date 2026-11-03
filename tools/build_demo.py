@@ -199,7 +199,7 @@ LIVE_CATEGORIES = [("21", "Movies"), ("22", "Classics"), ("23", "Kids & Animatio
 APPLE_BIPBOP = "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8"
 CHANNELS = [
     dict(id=1, cat="21", name="Open Movie Channel", src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8", films=[101, 102, 104, 105, 106, 103]),
-    dict(id=2, cat="21", name="Sci-Fi Nights", src="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8", films=[103, 206, 208, 305]),
+    dict(id=2, cat="21", name="Science Fiction", src="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8", films=[103, 206, 208, 305]),
     dict(id=3, cat="21", name="Mystery Movies", src=MOVIES[14]["src"], films=[301, 302, 303, 304]),
     dict(id=4, cat="21", name="Screwball", src=MOVIES[19]["src"], films=[401, 402]),
     dict(id=5, cat="22", name="Silent Cinema", src=MOVIES[6]["src"], films=[201, 202, 203, 204]),
