@@ -165,6 +165,16 @@
   @media (max-width:1000px) { .install ol { grid-template-columns:repeat(2, 1fr); } }
   @media (max-width:600px) { .install { padding:44px 20px; border-radius:24px; } .install ol { grid-template-columns:1fr; } }
 
+  .device-switch { display:flex; justify-content:center; gap:6px; margin:40px auto 0; padding:6px; width:max-content; max-width:100%;
+                   border-radius:999px; background:rgba(13,15,20,.45); border:1px solid var(--edge); }
+  .device-switch button { font:inherit; font-size:16px; font-weight:600; color:var(--muted); background:none; border:0; border-radius:999px;
+                          padding:10px 20px; cursor:pointer; white-space:nowrap; transition:background .18s ease-out, color .18s ease-out; }
+  .device-switch button:hover { color:var(--text); }
+  .device-switch button[aria-selected="true"] { background:#fff; color:#0d0f14; }
+  .install [role="tabpanel"] ol { margin-top:28px; }
+  .install .platforms { margin-top:28px; }
+  @media (max-width:600px) { .device-switch button { padding:9px 16px; font-size:15px; } .device-switch .long { display:none; } }
+
   /* iPhone and iPad */
   .mobile { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:center; }
   .soon { display:inline-flex; align-items:center; gap:8px; padding:6px 14px; border-radius:999px; font-size:14px; font-weight:600;
@@ -358,17 +368,33 @@
           <h2>Get Lumen on your TV</h2>
           <p class="sub">It takes about a minute. Works on Android TV, Google TV and Fire TV running Android 10 or newer.</p>
         </div>
-        <ol>
-          <li>Install the free <strong>Downloader</strong> app from your TV's app store.</li>
-          <li>Let Downloader install apps. Most TVs ask the first time; if not, see the tip below.</li>
-          <li>Open Downloader and enter the code:<br><span class="code" style="font-size:24px;letter-spacing:.08em">5956610</span><br><span style="font-size:14px">or the address lumen-tv.github.io/get</span></li>
-          <li>Choose <strong>Install</strong>, then open Lumen from your apps. That's it.</li>
-        </ol>
+        <div class="device-switch" role="tablist" aria-label="Choose your TV">
+          <button type="button" role="tab" id="tab-google" aria-controls="steps-google" aria-selected="true"><span class="long">Android TV &amp; </span>Google TV</button>
+          <button type="button" role="tab" id="tab-fire" aria-controls="steps-fire" aria-selected="false" tabindex="-1">Fire TV<span class="long"> &amp; Fire Stick</span></button>
+        </div>
+        <div id="steps-google" role="tabpanel" aria-labelledby="tab-google">
+          <ol>
+            <li>Install the free <strong>Downloader</strong> app from your TV's app store.</li>
+            <li>Let Downloader install apps. Most TVs ask the first time; if not, see the tip below.</li>
+            <li>Open Downloader and enter the code:<br><span class="code" style="font-size:24px;letter-spacing:.08em">5956610</span><br><span style="font-size:14px">or the address lumen-tv.github.io/get</span></li>
+            <li>Choose <strong>Install</strong>, then open Lumen from your apps. That's it.</li>
+          </ol>
+          <p class="hint">Tip: if Downloader doesn't ask, it's <em>Settings → Apps → Security &amp; restrictions → Unknown sources</em>.</p>
+        </div>
+        <div id="steps-fire" role="tabpanel" aria-labelledby="tab-fire" hidden>
+          <ol>
+            <li>Search for <strong>Downloader</strong> on your Fire TV's home screen, or say <em>"Alexa, Downloader"</em>. Choose <strong>Get</strong>. It's free.</li>
+            <li>Turn on <em>Settings → My Fire TV → Developer options → Install unknown apps → <strong>Downloader</strong></em>.</li>
+            <li>Open Downloader and enter the code:<br><span class="code" style="font-size:24px;letter-spacing:.08em">5956610</span><br><span style="font-size:14px">then choose <strong>Go</strong></span></li>
+            <li>Choose <strong>Install</strong>, then <strong>Open</strong>. Later you'll find Lumen under <em>Apps</em> on your home screen.</li>
+          </ol>
+          <p class="hint">No <em>Developer options</em>? Open <em>Settings → My Fire TV → About</em> and press OK on your device's name 7 times.<br>
+            Lumen needs Fire OS 8 or newer: you'll see yours under <em>About → Software version</em>.
+            Fire TVs that run Vega OS can't install apps from outside the Appstore, so Lumen won't work on them.</p>
+        </div>
         <div class="platforms" aria-label="Where Lumen runs">
           <span>Android TV</span><span>Google TV</span><span>Fire TV</span><a class="next" href="#iphone">iPhone &amp; iPad: coming soon</a>
         </div>
-        <p class="hint">Tip: on Android TV and Google TV it's <em>Settings → Apps → Security &amp; restrictions → Unknown sources</em>.
-          On Fire TV it's <em>Settings → My Fire TV → Developer options → Install unknown apps</em>.</p>
       </div>
     </div>
   </section>
@@ -410,6 +436,8 @@
           <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer (Android 10 or newer). iPhone and iPad with iOS 18 or newer are coming soon on the App Store.</p></details>
         <details class="glass"><summary>Do my iPhone and iPad stay in sync?</summary>
           <p>Yes. With iCloud turned on, your playlists, favourites, My List, where you stopped watching and your hidden or renamed categories are the same on every iPhone and iPad signed in to your account. Logins are kept in your iCloud Keychain. Without iCloud, Lumen simply keeps everything on the device.</p></details>
+        <details class="glass"><summary>Can I install it with my TV's web browser?</summary>
+          <p>Not on a Fire TV: its built-in browser can't install apps. Use the free Downloader app and the code <strong>5956610</strong> as shown above. Downloader has its own browser, and the code takes it straight to the newest version of Lumen.</p></details>
         <details class="glass"><summary>Is it really free?</summary>
           <p>Yes. No subscription, no ads, no account to make.</p></details>
         <details class="glass"><summary>How do updates work?</summary>
@@ -440,6 +468,26 @@
   // A faint line under the top bar once the page has scrolled.
   const header = document.getElementById("top");
   addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 8), { passive: true });
+
+  // Install steps: switch between Android/Google TV and Fire TV. "#fire-tv" in the link opens the Fire TV steps.
+  const tabs = [...document.querySelectorAll('.device-switch [role="tab"]')];
+  function pick(tab) {
+    for (const t of tabs) {
+      const on = t === tab;
+      t.setAttribute("aria-selected", on); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    }
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => pick(t));
+    t.addEventListener("keydown", e => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+      pick(next); next.focus();
+    });
+  });
+  if (/fire/i.test(location.hash) || /AFT|Silk/.test(navigator.userAgent)) pick(tabs[1]);
+  addEventListener("hashchange", () => { if (/fire/i.test(location.hash)) pick(tabs[1]); });
 </script>
 </body>
 </html>
