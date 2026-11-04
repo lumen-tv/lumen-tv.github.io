@@ -486,8 +486,9 @@
       pick(next); next.focus();
     });
   });
-  if (/fire/i.test(location.hash) || /AFT|Silk/.test(navigator.userAgent)) pick(tabs[1]);
-  addEventListener("hashchange", () => { if (/fire/i.test(location.hash)) pick(tabs[1]); });
+  const toFire = () => { pick(tabs[1]); document.getElementById("install").scrollIntoView(); };
+  if (/fire/i.test(location.hash)) toFire(); else if (/AFT|Silk/.test(navigator.userAgent)) pick(tabs[1]);
+  addEventListener("hashchange", () => { if (/fire/i.test(location.hash)) toFire(); });
 </script>
 </body>
 </html>
