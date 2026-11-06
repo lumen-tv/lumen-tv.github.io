@@ -207,6 +207,18 @@
                              .mobile ol { text-align:left; } .mobile .ctas { justify-content:center; } }
   @media (max-width:600px) { .iphone { border-radius:20px; padding:4px; } .iphone img { border-radius:16px; } .ipad { border-radius:16px; padding:6px; } .ipad img { border-radius:11px; } }
 
+  /* Mac */
+  .mac-section .mobile { grid-template-columns:1.1fr 1fr; }
+  .mac-section .devices { order:-1; }
+  .macwin { border-radius:14px; background:#05060a; border:1px solid rgba(255,255,255,.12); overflow:hidden;
+            box-shadow:0 40px 120px -20px rgba(0,0,0,.85); }
+  .macwin .lights { display:flex; gap:8px; padding:12px 14px; background:#14161c; }
+  .macwin .lights i { width:12px; height:12px; border-radius:50%; background:#ff5f57; }
+  .macwin .lights i:nth-child(2) { background:#febc2e; } .macwin .lights i:nth-child(3) { background:#28c840; }
+  .macwin img { display:block; width:100%; aspect-ratio:1180/820; object-fit:cover; }
+  .req { color:var(--faint); font-size:14px; margin:14px 0 0; }
+  @media (max-width:900px) { .mac-section .mobile { grid-template-columns:1fr; } .mac-section .devices { order:0; } }
+
   /* FAQ */
   .faq { max-width:780px; margin:48px auto 0; display:grid; gap:12px; }
   details { border-radius:20px; padding:0 24px; }
@@ -244,6 +256,7 @@
     <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
     <symbol id="i-sub" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M6 12.5h4M12 12.5h6M6 15.5h8M16 15.5h2"/></symbol>
     <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10.5a4 4 0 0 0 .6-8 6 6 0 0 0-11.6 1.500A3.300 3.300 0 0 0 7 18.500z"/><path d="M9.500 14.200l2 2 3.500-3.700"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="2"/><path d="M2 19h20"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6.5 10.5L12 16l5.5-5.5M5 20h14"/></symbol>
   </defs>
 </svg>
@@ -254,6 +267,7 @@
     <nav class="nav-links">
       <a class="hide-sm" href="#features">Features</a>
       <a class="hide-sm" href="#iphone">iPhone &amp; iPad</a>
+      <a class="hide-sm" href="#mac">Mac</a>
       <a class="hide-sm" href="#faq">FAQ</a>
       <a class="pill" href="#install"><svg><use href="#i-down"/></svg>Get Lumen</a>
     </nav>
@@ -393,7 +407,7 @@
             Fire TVs that run Vega OS can't install apps from outside the Appstore, so Lumen won't work on them.</p>
         </div>
         <div class="platforms" aria-label="Where Lumen runs">
-          <span>Android TV</span><span>Google TV</span><span>Fire TV</span><a class="next" href="#iphone">iPhone &amp; iPad: coming soon</a>
+          <span>Android TV</span><span>Google TV</span><span>Fire TV</span><a class="next" href="#iphone">iPhone &amp; iPad: coming soon</a><a class="next" href="#mac">Mac</a>
         </div>
       </div>
     </div>
@@ -425,6 +439,32 @@
     </div>
   </section>
 
+  <section id="mac" class="mac-section" style="padding-top:24px">
+    <div class="wrap">
+      <div class="install mobile">
+        <div class="kick">
+          <img class="app-icon" src="img/icon-256.jpg" alt="The Lumen app icon">
+          <span class="soon">Free download</span>
+          <h2>Lumen for Mac</h2>
+          <p class="sub">Everything you love about Lumen, in a window on your desk. Live TV with the full guide, films and series, picture in picture and AirPlay, with handy keyboard shortcuts: Space to pause, arrows to change channel or skip, F for full screen.</p>
+          <p class="sync"><svg><use href="#i-cloud"/></svg><span><strong>Synced with your iPhone and iPad.</strong> Sign in with the same Apple Account and your playlists, favourites, My List and where you stopped watching are already there.</span></p>
+          <ol>
+            <li><span>Download <strong>Lumen.dmg</strong> with the button below.</span></li>
+            <li><span>Open it and drag <strong>Lumen</strong> into your <strong>Applications</strong> folder.</span></li>
+            <li><span>Open Lumen and <strong>add your playlist link or Xtream login</strong>. Lumen tells you when a new version is out.</span></li>
+          </ol>
+          <div class="ctas">
+            <a class="pill" href="mac/"><svg><use href="#i-down"/></svg>Download for Mac</a>
+          </div>
+          <p class="req">For Macs with Apple silicon (M1 or newer) on macOS 15 or newer.</p>
+        </div>
+        <div class="devices">
+          <div class="macwin"><div class="lights"><i></i><i></i><i></i></div><img src="img/ipad.jpg" alt="Lumen: favourite channels as colourful cards under the top bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap kicker">
       <h2>Questions</h2>
@@ -433,15 +473,15 @@
         <details class="glass"><summary>Does Lumen come with channels?</summary>
           <p>No. Lumen is only a player: it comes with no channels, playlists or films. You add your own M3U playlist link or Xtream login from a TV service you already use.</p></details>
         <details class="glass"><summary>Which devices does it work on?</summary>
-          <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer (Android 10 or newer). iPhone and iPad with iOS 18 or newer are coming soon on the App Store.</p></details>
-        <details class="glass"><summary>Do my iPhone and iPad stay in sync?</summary>
-          <p>Yes. With iCloud turned on, your playlists, favourites, My List, where you stopped watching and your hidden or renamed categories are the same on every iPhone and iPad signed in to your account. Logins are kept in your iCloud Keychain. Without iCloud, Lumen simply keeps everything on the device.</p></details>
+          <p>Android TV and Google TV televisions, streaming sticks and boxes, and Fire TV devices on Fire OS 8 or newer (Android 10 or newer). iPhone and iPad with iOS 18 or newer are coming soon on the App Store. Macs with Apple silicon on macOS 15 or newer can download Lumen for Mac.</p></details>
+        <details class="glass"><summary>Do my iPhone, iPad and Mac stay in sync?</summary>
+          <p>Yes. With iCloud turned on, your playlists, favourites, My List, where you stopped watching and your hidden or renamed categories are the same on every iPhone, iPad and Mac signed in to your account. Logins are kept in your iCloud Keychain. Without iCloud, Lumen simply keeps everything on the device.</p></details>
         <details class="glass"><summary>Can I install it with my TV's web browser?</summary>
           <p>Not on a Fire TV: its built-in browser can't install apps. Use the free Downloader app and the code <strong>5956610</strong> as shown above. Downloader has its own browser, and the code takes it straight to the newest version of Lumen.</p></details>
         <details class="glass"><summary>Is it really free?</summary>
           <p>Yes. No subscription, no ads, no account to make.</p></details>
         <details class="glass"><summary>How do updates work?</summary>
-          <p>On your TV, Lumen tells you on its Home screen when a new version is out. Choose Update, confirm, and the new version is ready in moments. On iPhone and iPad, updates come through the App Store.</p></details>
+          <p>On your TV, Lumen tells you on its Home screen when a new version is out. Choose Update, confirm, and the new version is ready in moments. On iPhone and iPad, updates come through the App Store. Lumen for Mac checks for a new version when it opens and offers to download it.</p></details>
         <details class="glass"><summary>Is there a TV guide?</summary>
           <p>Yes. Lumen loads your service's guide automatically, or you can add a separate guide link in Settings. It refreshes itself in the background.</p></details>
         <details class="glass"><summary>What does Lumen know about me?</summary>
